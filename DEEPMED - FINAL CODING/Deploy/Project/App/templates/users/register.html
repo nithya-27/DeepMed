@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    body{
+        display: flex;
+        height: 100vh;
+        background-color: #343a40;
+    }
+    
+    #container{
+        margin:auto;
+        display: flex;
+        color:#f8f9fa;
+        flex-direction: column;
+        width:500px;
+        box-shadow: 1px 2px 71px -6px rgba(0,0,0,0.67);
+        height:fit-content;
+        font-family: 'Ubuntu', sans-serif;
+        background-color: #212529;
+        padding:50px 20px;
+        border-radius: 10px;
+    }
+    #Heading{
+        padding:10px;
+        text-align: center;
+        font-size: 2.5em;
+        font-weight: 900;
+    }
+    label{
+        font-size: 1.2em;
+        font-weight: 500;
+        margin:10px 0px;
+    }
+    input{
+        padding:10px;
+        border-top-right-radius: 10px;
+        height: 50px;
+        border: none;
+        background-color: #6c757d;
+        border-bottom-right-radius:10px;
+        font-size:19.2px;
+        
+        color:#f8f9fa;
+    }
+    input:focus{
+        outline: none;
+        background-color: none;
+      border-bottom:1.5px solid lime;
+    }
+    input::placeholder{
+        color:#f8f9fa;
+        font-size: 19.2px;
+    }
+    .row{
+        width:100%;
+        height:fit-content;
+        display: grid;
+        grid-template-columns: 10% 90%;
+        grid-template-rows: 50px;
+    }
+    .icon{
+        height: 50px;
+        margin-right:1px;
+        background-color: #6c757d;
+        border-top-left-radius: 10px;
+        padding:10px;
+        border-bottom-left-radius: 10px;
+        fill:white;
+    }
+    button{
+        width:fit-content;
+        margin:20px auto;
+        padding:10px 20px;
+        outline: none;
+        border: none;
+        border-radius: 20px;
+        font-weight: 700;
+        color:white;
+        background-color: #248277;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1.1em;
+        cursor: pointer;
+        transition-duration: 0.25s;
+    }
+    button:hover{
+        background-color: #036666;
+    }
+    span{
+        display: flex;
+        justify-content: space-between;
+    
+    }
+    a{
+        text-decoration: none;
+        color:#99e2b4;
+    }
+    span>span>a{
+        margin:0px 5px
+    }
+    a:hover{
+        color: #06d6a0;
+    }
+    
+</style>
+<body>
+    <form id="container" method="post">
+        {% csrf_token %}
+        {% if form.errors %}
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                <div id="form_errors">
+                    {% for key, value in form.errors.items %}
+                    <strong style="color: darksalmon;">{{ value }}</strong>
+                    {% endfor %}
+                </div>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+          {% endif %}
+
+        <h3 id="Heading">Sign Up</h3>
+        <label for="first_name">First Name:</label>
+        <div class="row">
+            <div class="icon">
+                <!-- User icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="24" height="24">
+                    <path d="M256 32C114.6 32 0 146.6 0 288s114.6 256 256 256 256-114.6 256-256S397.4 32 256 32zM256 448c-70.7 0-128-57.3-128-128 0-44.2 20.5-86.7 54.6-112.5 26.4 29.1 62.1 49.5 104.4 49.5s78-20.4 104.4-49.5C363.5 233.3 384 275.8 384 320c0 70.7-57.3 128-128 128z"/>
+                </svg>
+            </div>
+            <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
+        </div>
+        
+        <label for="last_name">Last Name:</label>
+        <div class="row">
+            <div class="icon">
+                <!-- User icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="24" height="24">
+                    <path d="M256 32C114.6 32 0 146.6 0 288s114.6 256 256 256 256-114.6 256-256S397.4 32 256 32zM256 448c-70.7 0-128-57.3-128-128 0-44.2 20.5-86.7 54.6-112.5 26.4 29.1 62.1 49.5 104.4 49.5s78-20.4 104.4-49.5C363.5 233.3 384 275.8 384 320c0 70.7-57.3 128-128 128z"/>
+                </svg>
+            </div>
+            <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
+        </div>
+        
+        <label for="username">Username:</label>
+        <div class="row">
+            <div class="icon">
+                <!-- User icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="24" height="24">
+                    <path d="M256 32C114.6 32 0 146.6 0 288s114.6 256 256 256 256-114.6 256-256S397.4 32 256 32zM256 448c-70.7 0-128-57.3-128-128 0-44.2 20.5-86.7 54.6-112.5 26.4 29.1 62.1 49.5 104.4 49.5s78-20.4 104.4-49.5C363.5 233.3 384 275.8 384 320c0 70.7-57.3 128-128 128z"/>
+                </svg>
+            </div>
+            <input type="text" id="username" name="username" placeholder="Username" required>
+        </div>
+        
+        <label for="email">Email:</label>
+        <div class="row">
+            <div class="icon">
+                <!-- Email icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="24" height="24">
+                    <path d="M448 64H32C14.3 64 0 78.3 0 96V416c0 17.7 14.3 32 32 32h416c17.7 0 32-14.3 32-32V96c0-17.7-14.3-32-32-32zM32 96l192 144L416 96V416H32V96zm192 144L32 416V96l192 144L416 96v320H224V240z"/>
+                </svg>
+            </div>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+        </div>
+        
+        <label for="password1">Password:</label>
+        <div class="row">
+            <div class="icon">
+                <!-- Lock icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="24" height="24">
+                    <path d="M320 256h-16V136c0-26.5-21.5-48-48-48s-48 21.5-48 48v120h-16c-13.3 0-24 10.7-24 24v208c0 13.3 10.7 24 24 24h128c13.3 0 24-10.7 24-24V280c0-13.3-10.7-24-24-24zm-64-136c13.3 0 24 10.7 24 24v136h-48V144c0-13.3 10.7-24 24-24zm32 288H96V280h192v128z"/>
+                </svg>
+            </div>
+            <input type="password" id="password1" name="password1" placeholder="Password" required>
+        </div>
+        
+        <label for="password2">Confirm Password:</label>
+        <div class="row">
+            <div class="icon">
+                <!-- Lock icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="24" height="24">
+                    <path d="M320 256h-16V136c0-26.5-21.5-48-48-48s-48 21.5-48 48v120h-16c-13.3 0-24 10.7-24 24v208c0 13.3 10.7 24 24 24h128c13.3 0 24-10.7 24-24V280c0-13.3-10.7-24-24-24zm-64-136c13.3 0 24 10.7 24 24v136h-48V144c0-13.3 10.7-24 24-24zm32 288H96V280h192v128z"/>
+                </svg>
+            </div>
+            <input type="password" id="password2" name="password2" placeholder="Confirm Password" required>
+        </div>
+        
+        <button type="submit">Sign Up</button>
+        
+         <span><span><!--<a href="#">Forgot Password?</a></span> -->
+        <span>Do Have a Account? <a href="{% url 'login' %}"> Sign In</a></span>
+    </form>
+</body>
+</html>

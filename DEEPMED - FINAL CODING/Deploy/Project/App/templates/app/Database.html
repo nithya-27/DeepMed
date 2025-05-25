@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Information Database</title>
+    <style>
+        body {
+            background-color: #f0f4f7;
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 800px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h4 {
+            text-align: center;
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .table {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .header {
+            background-color: #42a5f5;
+            color: #fff;
+            font-weight: 600;
+            text-align: center;
+            padding: 10px 0;
+            border-radius: 10px 10px 0 0;
+            letter-spacing: 0.05em;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            background: linear-gradient(120deg, #42a5f5, #478ed1);
+            color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: background 0.3s ease;
+            padding: 10px;
+        }
+
+        .row:hover {
+            background: linear-gradient(120deg, #478ed1, #1976d2);
+        }
+
+        .row img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .row:hover img {
+            transform: scale(1.05);
+        }
+
+        .row span {
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 600px) {
+            .table {
+                grid-template-columns: 1fr;
+            }
+
+            .row {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .row img {
+                max-width: 60%;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h4>Personal Information Database</h4>
+        
+        <div class="table">
+            <div class="header">IMAGES</div>
+            <div class="header">LABEL</div>
+            
+            {% for model in models %}
+            <div class="row">
+                <span><img src="{{ model.image.url }}" alt="Image" width="150" height="150"></span>
+                <span>{{ model.label }}</span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

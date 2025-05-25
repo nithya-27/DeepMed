@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classification Details</title>
+    <style>
+ /* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Centered Layout */
+.centered {
+    text-align: center;
+}
+
+/* Header Image */
+.header-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+/* Card Content */
+.card-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+/* Card Title */
+.card-title {
+    font-size: 24px;
+    color: #0056b3;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Table Container */
+.table-container {
+    margin: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+table tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Headings Styles */
+h2, h3 {
+    color: #0056b3;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 28px;
+    margin: 20px 0 10px 0;
+}
+
+h3 {
+    font-size: 22px;
+    margin: 15px 0 5px 0;
+}
+
+/* Paragraph Styles */
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Lists Styles */
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Links Styles */
+a {
+    text-decoration: none;
+    color: rgb(11, 53, 243);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Special Highlight */
+.section-title {
+    color: rgb(11, 9, 122);
+    font-weight: bold;
+}
+
+/* Container Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.col-md-12 {
+    width: 100%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .card-content, .table-container {
+        margin: 10px;
+        padding: 15px;
+    }
+    
+    .header-image {
+        margin: 10px 0;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <br><br>
+   <center> <div class="col-md-12">
+        <p style="color: rgb(11, 53, 243); text-indent: 100px;"  ><a class="row__title" href="/"><span class="section-title" style="color: rgb(11, 9, 122);">Back to Homepage</span></a></span></p>
+      </div></center>
+      <center><img src="{{ obj.image.url }}" alt="Input Images" class="header-image" style="width: 350px; width: 350px;">
+            <div class="card-content">
+                <p class="card-title">{{ predicted | upper }}</p></center>
+    
+    <div class="container">
+        <div class="card">
+            
+                <!-- Classification Details -->
+                {% if obj %}
+                    <div class="table-container">
+                        <table>
+                            
+                            <tbody>
+                                {% if predict == "dyed_lifted_polyps" %}
+                                <tr>
+                                    <h2>Dyed Lifted Polyps</h2>
+                                  </tr>
+                                  <h3>Description</h3>
+                                  <p>Dyed lifted polyps are abnormal growths that form on the lining of the colon or rectum. These polyps are often detected during a colonoscopy, where a special dye is applied to the area to enhance visibility, making it easier to identify and differentiate polyps from surrounding tissues. The dye highlights the polyp's borders, assisting in the precise removal and examination. While many polyps are benign, some may have the potential to develop into colorectal cancer if left untreated.</p>
+                                  
+                                  <h3>Symptoms</h3>
+                                  <p>In many cases, dyed lifted polyps do not cause noticeable symptoms and are often found during routine screening. However, when symptoms are present, they may include:</p>
+                                  <ul>
+                                      <li>Rectal bleeding, which may manifest as blood in the stool</li>
+                                      <li>Changes in bowel habits, such as diarrhea, constipation, or narrowing of the stool that lasts more than a few days</li>
+                                      <li>Abdominal pain or discomfort</li>
+                                      <li>Anemia due to chronic blood loss, leading to fatigue and weakness</li>
+                                      <li>Unexplained weight loss in some cases</li>
+                                  </ul>
+                                  
+                                  <h3>Treatment</h3>
+                                  <p>The primary treatment for dyed lifted polyps involves their removal during a colonoscopy. The procedure, known as polypectomy, is minimally invasive and typically performed under sedation. The removed polyp is then sent to a laboratory for histological examination to determine its nature—whether it is benign, pre-cancerous, or cancerous. Depending on the findings, further treatment or surveillance may be recommended. In rare cases where polyps are too large or complex to be removed endoscopically, surgery may be required.</p>
+                                  
+                                  <h3>Prevention</h3>
+                                  <p>Preventing dyed lifted polyps primarily involves regular screening, especially for individuals over the age of 50 or those with a family history of colorectal cancer. Colonoscopy is the most effective screening tool, allowing for the detection and removal of polyps before they have the chance to become cancerous. Additional preventive measures include:</p>
+                                  <ul>
+                                      <li>Maintaining a diet high in fruits, vegetables, and whole grains while limiting red and processed meats</li>
+                                      <li>Regular physical activity</li>
+                                      <li>Avoiding smoking and limiting alcohol consumption</li>
+                                      <li>Managing weight and avoiding obesity</li>
+                                      <li>Considering the use of aspirin or other nonsteroidal anti-inflammatory drugs (NSAIDs) as advised by a healthcare provider, which may reduce the risk of polyps in some individuals</li>
+                                  </ul>
+                                  
+                                
+                            {% elif predict == "dyed_resection_margins" %}
+                            <h2>Dyed Resection Margins</h2>
+
+                            <h3>Description</h3>
+                            <p>Dyed resection margins refer to the edges or borders of tissue that have been surgically removed, which are stained with a dye to help surgeons and pathologists clearly identify the boundary between healthy and diseased tissue. This technique is commonly used in cancer surgeries and other procedures where it's critical to remove all diseased tissue. The dye allows for a more precise examination under a microscope, helping to determine whether the entire area of concern has been successfully removed, reducing the risk of leaving behind any residual disease.</p>
+                            
+                            <h3>Symptoms</h3>
+                            <p>While "dyed resection margins" themselves do not cause symptoms, the underlying condition that necessitates surgery may present with symptoms. These could include:</p>
+                            <ul>
+                                <li>Presence of a lump or mass that can be felt or seen, depending on the location of the disease</li>
+                                <li>Persistent pain or discomfort in the affected area</li>
+                                <li>Unexplained weight loss</li>
+                                <li>Fatigue and general malaise</li>
+                                <li>Bleeding or discharge from the affected area (for example, rectal bleeding in cases of colorectal cancer)</li>
+                            </ul>
+                            <p>After surgery, some symptoms related to the healing process or complications might include:</p>
+                            <ul>
+                                <li>Pain or discomfort at the surgical site</li>
+                                <li>Swelling, redness, or signs of infection</li>
+                                <li>Delayed healing or issues with the surgical wound</li>
+                            </ul>
+                            
+                            <h3>Treatment</h3>
+                            <p>The treatment approach involving dyed resection margins primarily includes the following steps:</p>
+                            <ul>
+                                <li><strong>Surgical Excision:</strong> The first step in treatment is the surgical removal of the diseased tissue. The surgeon removes the affected area along with a margin of surrounding healthy tissue to ensure complete excision.</li>
+                                <li><strong>Dye Application:</strong> After the tissue is removed, the margins are dyed to delineate the edges of the resected tissue. This dye application helps in accurately assessing the margins during pathological examination.</li>
+                                <li><strong>Pathological Examination:</strong> The dyed tissue is sent to a pathologist who examines the margins under a microscope to ensure that no diseased cells are present at the edges. If the margins are clear (i.e., free of disease), it indicates that the entire diseased area has been removed.</li>
+                                <li><strong>Further Treatment:</strong> If the margins are not clear, additional treatment may be required. This could involve further surgery to remove more tissue, or other therapies such as radiation or chemotherapy to eliminate any remaining diseased cells.</li>
+                            </ul>
+                            
+                            <h3>Prevention</h3>
+                            <p>Preventing the recurrence of disease and ensuring successful surgical outcomes with dyed resection margins involves several key strategies:</p>
+                            <ul>
+                                <li><strong>Early Detection:</strong> Regular screenings and early detection of diseases, particularly cancers, can increase the likelihood of successful treatment with clear margins. For example, routine mammograms, colonoscopies, or skin checks can help detect abnormalities early.</li>
+                                <li><strong>Precision in Surgery:</strong> Surgeons aim to remove not just the visible tumor but also an appropriate margin of healthy tissue around it. The use of dyed resection margins enhances the accuracy of this process, reducing the risk of leaving behind any diseased tissue.</li>
+                                <li><strong>Preoperative Planning:</strong> Advanced imaging techniques and careful surgical planning are critical to determining the extent of disease and planning for adequate margins during surgery. This reduces the need for reoperation and ensures a higher success rate.</li>
+                                <li><strong>Postoperative Monitoring:</strong> After surgery, regular follow-up visits, imaging studies, and possibly additional biopsies are crucial for monitoring any signs of recurrence. Early intervention in case of any suspicious findings can prevent the spread of disease.</li>
+                                <li><strong>Adjuvant Therapies:</strong> In some cases, even when margins are clear, additional treatments such as chemotherapy, radiation, or targeted therapies may be recommended to minimize the risk of recurrence, particularly in aggressive or high-risk cancers.</li>
+                            </ul>
+                            
+                                
+                            {% elif predict == "esophagus" %}
+                            <h2>Esophagus</h2>
+
+                            <h3>Description</h3>
+                            
+                            <p>The esophagus is a muscular tube that carries food, liquids, and saliva from the mouth to the stomach. It is a crucial part of the digestive system. The esophagus is lined with a mucous membrane and has several layers of muscle that help propel food down to the stomach. Common conditions affecting the esophagus include gastroesophageal reflux disease (GERD), esophagitis (inflammation of the esophagus), Barrett's esophagus (a precancerous condition), and esophageal cancer. Other issues may involve structural abnormalities such as strictures or diverticula.</p>
+                            <h3>Symptoms</h3>
+                            
+                            <ul>
+                                <li>Difficulty swallowing (dysphagia): A sensation of food getting stuck or discomfort while swallowing.</li>
+                                <li>Heartburn: A burning sensation in the chest caused by stomach acid backing up into the esophagus.</li>
+                                <li>Chest pain: Pain in the chest area that can be sharp or aching, sometimes mistaken for heart-related issues.</li>
+                                <li>Regurgitation: The return of undigested food or liquid into the mouth, often with a sour taste.</li>
+                                <li>Coughing or hoarseness: Chronic coughing or changes in voice, which may be linked to esophageal conditions.</li>
+                                <li>Unintended weight loss: Loss of weight due to difficulties in eating or swallowing.</li>
+                            </ul>
+                            <h3>Treatment</h3>
+                            
+                            <p>Treatment for esophageal conditions varies depending on the diagnosis. Options may include:</p>
+                            <ul>
+                                <li><strong>Medications:</strong> Acid reducers, antacids, or anti-inflammatory drugs may be prescribed for conditions like GERD or esophagitis.</li>
+                                <li><strong>Dietary Changes:</strong> Adjusting eating habits, such as eating smaller, more frequent meals and avoiding spicy or acidic foods.</li>
+                                <li><strong>Surgery:</strong> In severe cases, surgical procedures like fundoplication or esophageal dilation may be necessary to correct structural issues or severe reflux.</li>
+                                <li><strong>Endoscopic Procedures:</strong> Techniques such as endoscopic mucosal resection or phototherapy may be used to treat tumors or Barrett's esophagus.</li>
+                            </ul>
+                            <h3>Prevention</h3>
+                            
+                            <p>While not all esophageal conditions can be prevented, certain lifestyle and dietary changes can reduce the risk:</p>
+                            <ul>
+                                <li><strong>Maintain a Healthy Weight:</strong> Obesity can increase the risk of GERD and other esophageal problems.</li>
+                                <li><strong>Avoid Trigger Foods:</strong> Limit intake of foods and beverages that may exacerbate symptoms, such as spicy foods, caffeine, and alcohol.</li>
+                                <li><strong>Eat Smaller Meals:</strong> Consuming smaller, more frequent meals can help reduce the pressure on the esophagus and prevent reflux.</li>
+                                <li><strong>Quit Smoking:</strong> Smoking can contribute to esophageal problems, including increased risk of cancer.</li>
+                                <li><strong>Elevate the Head of the Bed:</strong> If you experience nighttime reflux, raising the head of your bed can help prevent acid from flowing back into the esophagus.</li>
+                                <li><strong>Regular Check-Ups:</strong> If you have persistent symptoms, regular medical check-ups can help identify and manage conditions early.</li>
+                            </ul>
+                            {% elif predict == "normal_pylorus" %}
+                                <h2>Normal Pylorus</h2>
+                                <h3>Description</h3>
+                                <p>The pylorus is the part of the stomach that connects to the small intestine. A normal pylorus has no signs of obstruction or abnormal growths.</p>
+                                <h3>Role</h3>
+                                <p>It plays a critical role in controlling the flow of stomach contents into the small intestine.</p>
+                                <h3>Maintenance</h3>
+                                <p>Regular check-ups can ensure that it continues to function properly.</p>
+                                
+                            {% elif predict == "normal_z_line" %}
+                                <h2>Normal Z Line</h2>
+                                <h3>Description</h3>
+                                <p>The Z line is the area where the esophagus and stomach meet. A normal Z line indicates no evidence of gastroesophageal reflux disease (GERD) or Barrett's esophagus.</p>
+                                <h3>Health</h3>
+                                <p>Maintaining a healthy diet and avoiding irritants can help preserve the health of the Z line.</p>
+                                
+                            {% elif predict == "polyps" %}
+                            <h2>Polyps</h2>
+                            <h3>Description</h3>
+                            <p>Polyps are abnormal growths of tissue that can occur in various parts of the body, most commonly in the colon, but also in the stomach, nasal cavity, or uterus. They arise from the lining of the organ and can vary in size from tiny to large. While many polyps are benign (non-cancerous), some may develop into cancer over time if left untreated. The presence of polyps can be detected through various diagnostic methods such as colonoscopy, which allows for visualization and removal of polyps for further examination.</p>
+                            <h3>Symptoms</h3>
+                            <p>Polyps may not always present symptoms, especially if they are small. However, larger or numerous polyps can cause:</p>
+                            <ul>
+                                <li>Rectal bleeding or blood in stool</li>
+                                <li>Abdominal pain or cramping</li>
+                                <li>Changes in bowel habits, such as diarrhea or constipation</li>
+                                <li>Unexplained weight loss</li>
+                                <li>Mucus in stool</li>
+                            </ul>
+                            <h3>Treatment</h3>
+                            <p>The treatment of polyps generally involves their removal and examination to determine if they are cancerous. The methods for removal can include:</p>
+                            <ul>
+                                <li><strong>Polypectomy:</strong> This is the surgical removal of the polyp during a colonoscopy or other endoscopic procedure.</li>
+                                <li><strong>Endoscopic mucosal resection (EMR):</strong> A technique used to remove larger polyps by lifting the polyp from the surrounding tissue.</li>
+                                <li><strong>Traditional surgery:</strong> For very large or complex polyps that cannot be removed endoscopically.</li>
+                            </ul>
+                            <p>Post-removal, polyps are usually sent to a laboratory for biopsy to check for signs of cancer. Regular follow-up screenings are crucial to monitor for the recurrence of polyps and to prevent the development of colorectal cancer.</p>
+                            <h3>Prevention</h3>
+                            <p>While not all polyps can be prevented, several strategies can help reduce the risk of developing them:</p>
+                            <ul>
+                                <li><strong>Regular Screenings:</strong> Regular colonoscopies are recommended, especially for individuals over 50 or those with a family history of polyps or colorectal cancer.</li>
+                                <li><strong>Healthy Diet:</strong> Consuming a diet high in fruits, vegetables, and fiber while reducing red and processed meats may lower the risk.</li>
+                                <li><strong>Physical Activity:</strong> Regular exercise and maintaining a healthy weight can help lower the risk of polyp development.</li>
+                                <li><strong>Avoid Smoking and Excessive Alcohol:</strong> Limiting tobacco use and alcohol consumption may reduce the risk of polyps and colorectal cancer.</li>
+                                <li><strong>Medication:</strong> In some cases, doctors may recommend medications such as aspirin or other nonsteroidal anti-inflammatory drugs (NSAIDs) to reduce the risk of polyp formation.</li>
+                            </ul>
+                            {% elif predict == "ulcerative_colitis" %}
+                            <h2>Ulcerative Colitis</h2>
+
+                            <h3>Description</h3>
+                            <p>Ulcerative colitis is a chronic inflammatory bowel disease (IBD) that primarily affects the colon and rectum. It causes inflammation and formation of ulcers (sores) in the lining of the large intestine. The inflammation can result in a continuous stretch of affected colon, typically starting from the rectum and extending upwards. The exact cause of ulcerative colitis is unknown, but it is believed to involve a combination of genetic and environmental factors, as well as an abnormal immune response.</p>
+                            
+                            <h3>Symptoms</h3>
+                            <ul>
+                                <li><strong>Abdominal Pain:</strong> Persistent cramping and discomfort in the abdomen.</li>
+                                <li><strong>Diarrhea:</strong> Frequent, loose, and watery stools, sometimes with blood or pus.</li>
+                                <li><strong>Weight Loss:</strong> Unintentional loss of weight due to decreased appetite and nutrient absorption.</li>
+                                <li><strong>Fatigue:</strong> Generalized tiredness and lack of energy.</li>
+                                <li><strong>Rectal Bleeding:</strong> Presence of blood in stool or from the rectum.</li>
+                                <li><strong>Urgency to Defecate:</strong> An increased need to pass stools urgently.</li>
+                                <li><strong>Fever:</strong> Occasionally, patients may experience fever as part of their symptoms.</li>
+                            </ul>
+                            
+                            <h3>Treatment</h3>
+                            <p>Treatment for ulcerative colitis aims to reduce inflammation, manage symptoms, and maintain remission. Options include:</p>
+                            <ul>
+                                <li><strong>Medications:</strong> Anti-inflammatory drugs (such as aminosalicylates), immunosuppressants, and biologics are commonly prescribed to reduce inflammation and control symptoms. Corticosteroids may be used for acute flare-ups.</li>
+                                <li><strong>Dietary Adjustments:</strong> Modifying the diet to avoid triggers and manage symptoms. A low-fiber diet or special diets may help reduce discomfort.</li>
+                                <li><strong>Surgery:</strong> In cases where medications and other treatments are not effective, surgical options may be considered. This might involve removing the affected part of the colon (colectomy) and creating an alternative pathway for waste elimination.</li>
+                                <li><strong>Probiotics:</strong> Sometimes recommended to support gut health and balance intestinal flora.</li>
+                            </ul>
+                            
+                            <h3>Prevention</h3>
+                            <p>While there is no known way to prevent ulcerative colitis, certain strategies may help manage and reduce the risk of flare-ups:</p>
+                            <ul>
+                                <li><strong>Regular Medical Check-ups:</strong> Routine visits with a healthcare provider to monitor the condition and adjust treatment as needed.</li>
+                                <li><strong>Avoiding Known Triggers:</strong> Identifying and avoiding specific foods, stressors, or environmental factors that exacerbate symptoms.</li>
+                                <li><strong>Healthy Lifestyle:</strong> Maintaining a balanced diet, exercising regularly, and managing stress effectively can help support overall health and potentially minimize flare-ups.</li>
+                                <li><strong>Medication Adherence:</strong> Consistently taking prescribed medications and following the treatment plan as directed by a healthcare provider.</li>
+                                <li><strong>Support Networks:</strong> Engaging with support groups or counseling to cope with the emotional and psychological aspects of living with ulcerative colitis.</li>
+                            </ul>
+                                {% endif %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

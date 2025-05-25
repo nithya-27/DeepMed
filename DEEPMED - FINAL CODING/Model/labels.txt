@@ -1,0 +1,7 @@
+0 dyed_lifted_polyps
+1 dyed_resection_margins
+2 esophagus
+3 normal_pylorus
+4 normal_z_line
+5 polyps
+6 ulcerative_colitis

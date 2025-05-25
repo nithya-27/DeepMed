@@ -1,0 +1,365 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Medi</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="/static/img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+     {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/gijgo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slicknav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-3">
+                            <div class="logo-img">
+                                <a href="index.html">
+                                    <img src="/static/img/logo.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-9">
+                            <div class="menu_wrap d-none d-lg-block">
+                                <div class="menu_wrap_inner d-flex align-items-center justify-content-end">
+                                    <div class="main-menu">
+                                        <nav>
+                                            <ul id="navigation">
+                                                <li><a href="/">home</a></li>
+                                                {% if user.is_authenticated %}
+                                                <li><a href="{% url 'users-profile' %}">Profile</a></li>
+                                                <!-- <li><a href="#">blog <i class="ti-angle-down"></i></a>
+                                                    <ul class="submenu">
+                                                        <li><a href="blog.html">blog</a></li>
+                                                        <li><a href="single-blog.html">single-blog</a></li>
+                                                    </ul>
+                                                </li> -->
+                                                <li><a href="{% url 'Database' %}">Datasets</a>
+                                                </li>
+                                                <li><a href="{% url 'Deploy_8' %}">Model</a>
+                                                </li>
+                                                <li><a href="{% url 'logout_view' %}">Logout</a></li>
+                                                {% else %}
+                                                <li><a href="{% url 'login' %}">Login</a></li>
+                                                {% endif %}
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <!-- <div class="book_room">
+                                       
+                                        <div class="book_btn">
+                                            <a class="popup-with-form" href="{% url 'logout_view' %}">Logout</a>
+                                        </div>
+                                        
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="slider_active owl-carousel">
+            <div class="single_slider  d-flex align-items-center slider_bg_1 overlay">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="slider_text ">
+                                <span>Detectives Unmasking</span>
+                                <h3> <span>Esophageal Cancer</span> <br>
+                                    using Deep Learning.</h3>
+                                {% if user.is_authenticated %}
+                                <a href="{% url 'Deploy_8' %}" class="boxed-btn5">Detection
+                                </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider_area_end -->
+    {% if user.is_authenticated %}
+   <!-- welcome_clicnic_area_start -->
+<div class="welcome_clicnic_area">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-6 col-lg-6">
+                <div class="welcome_thumb">
+                    <div class="thumb_1">
+                        <img src="/static/img/about/1.jpg" alt="Esophageal Cancer Awareness">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6">
+                <div class="welcome_docmed_info">
+                    <h3>Welcome To
+                        <span>Esophageal Cancer Awareness.</span></h3>
+                    <p>Esophageal cancer is a serious condition that affects the esophagus, the tube that carries food from your mouth to your stomach. Early detection and treatment are crucial for improving outcomes. Learn more about the symptoms, risk factors, and prevention strategies to protect your health.</p>
+                    <ul>
+                        <li> <i class="flaticon-verified"></i> Recognize early symptoms such as difficulty swallowing </li>
+                        <li> <i class="flaticon-verified"></i> Understand the risk factors like smoking and heavy drinking </li>
+                        <li> <i class="flaticon-verified"></i> Explore preventive measures and screening options </li>
+                    </ul>
+                    <a href="https://www.ecaware.org/" class="boxed-btn6">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- welcome_clicnic_area_end -->
+    <!-- quality_area_start  -->
+    <div class="quality_area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section_title mb-55 text-center">
+                        <h3>Esophageal Cancer Care</h3>
+                        <p>Providing comprehensive care for esophageal cancer through expert consultations, advanced diagnostics, and effective treatments.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_quality">
+                        <div class="icon">
+                            <i class="flaticon-customer-service"></i> <!-- Change icon if necessary -->
+                        </div>
+                        <h3>Expert Consultation</h3>
+                        <p>Consult with top specialists in esophageal cancer for personalized treatment plans and second opinions.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_quality">
+                        <div class="icon">
+                            <i class="flaticon-find"></i> <!-- Change icon if necessary -->
+                        </div>
+                        <h3>Advanced Diagnostics</h3>
+                        <p>Access cutting-edge diagnostic tools and technologies to accurately assess and monitor esophageal cancer.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_quality">
+                        <div class="icon">
+                            <i class="flaticon-doctor"></i> <!-- Change icon if necessary -->
+                        </div>
+                        <h3>Effective Treatment</h3>
+                        <p>Receive the latest treatment options including surgery, radiation, and chemotherapy tailored to your needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- quality_area_end  -->
+    {% endif %}
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 col-lg-4 ">
+                        <div class="footer_widget">
+                            <div class="footer_logo">
+                                <a href="#">
+                                    <img src="/static/img/logo.png" alt="">
+                                </a>
+                            </div>
+                            <p class="address_text">At later stages,esophageal cancer can be treated  <br> but rarely can be cured. <br> Taking part in one of the clinical trials being done to improve treatment should be considered.
+                            </p>
+                            <div class="socail_links">
+                                <ul>
+                                    <li>
+                                        <a href="https://www.facebook.com/ECAware/">
+                                            <i class="ti-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://x.com/ecscproject">
+                                            <i class="ti-twitter-alt"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://dribbble.com/tags/esophageal">
+                                            <i class="fa fa-dribbble"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/salgifoundation/">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-lg-4">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Navbar
+                            </h3>
+                            <ul class="links">
+                                <li><a href="#">Home</a></li>
+                                {% if user.is_authenticated %}
+                                <li><a href="{% url 'Database' %}">Dataset</a></li>
+                                <li><a href="{% url 'users-profile' %}">Profile</a></li>
+                                <li><a href="{% url 'Deploy_8' %}">Model</a></li>
+                                <li><a href="{% url 'logout_view' %}">Logout</a></li>
+                                {% else %}
+                                <li class="nav-item">
+                                    <a href="{% url 'login' %}">Login</a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4  col-md-6 col-lg-4">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                We’re used technologies
+                            </h3>
+                            <ul class="meting_time">
+                                <li class="d-flex justify-content-between "><span>Deep Learning</span> <span>Html,css</span></li>
+                                <li class="d-flex justify-content-between "><span>Django	</span> <span>Java script</span></li>
+                                <li class="d-flex justify-content-between "><span>Cnn</span> <span>SQL Lite</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </footer>
+
+    <!-- link that opens popup -->
+
+    <!-- form itself end-->
+    <form id="test-form" class="white-popup-block mfp-hide">
+        <div class="popup_box ">
+            <div class="popup_inner">
+                <h3>
+                    Book an 
+                <span>Appointment</span>
+                </h3>
+                <form action="#">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <select class="form-select wide" id="default-select" class="">
+                                <option data-display="Please select doctor to visit">Please select doctor to visit </option>
+                                <option value="1">Anaf</option>
+                                <option value="2">Nayna Therapy</option>
+                                <option value="3">Nadif</option>
+                            </select>
+                        </div>
+                        <div class="col-xl-9">
+                            <input type="text"  placeholder="Your name ">
+                        </div>
+                        <div class="col-xl-3">
+                            <input type="text"  placeholder="Your age">
+                        </div>
+                        <div class="col-xl-6">
+                            <input type="text"  placeholder="Phone number ">
+                        </div>
+                        <div class="col-xl-6">
+                            <input type="email"  placeholder="Email Address">
+                        </div>
+                        <div class="col-xl-6">
+                            <input class="datepicker" placeholder="Appointment Date">
+                        </div>
+                        <div class="col-xl-6">
+                            <input class="timepicker" placeholder="Suitable time">
+                        </div>
+                        <div class="col-xl-12">
+                            <button type="submit" class="boxed-btn3">Make an Appointment</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </form>
+    <!-- form itself end -->
+
+    <!-- JS here -->
+    <script src="{% static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
+    <script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/ajax-form.js' %}"></script>
+    <script src="{% static 'js/waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/scrollIt.js' %}"></script>
+    <script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script src="{% static 'js/nice-select.min.js' %}"></script>
+    <script src="{% static 'js/jquery.slicknav.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/gijgo.min.js' %}"></script>
+    <!--contact js-->
+    <script src="{% static 'js/contact.js' %}"></script>
+    <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'js/jquery.form.js' %}"></script>
+    <script src="{% static 'js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'js/mail-script.js' %}"></script>
+
+    <script src="{% static 'js/main.js' %}"></script>
+    <script>
+        $('.datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-calendar"></span>'
+            }
+        });
+
+        $('.timepicker').timepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-clock-o"></span>'
+            }
+        });
+    $(document).ready(function() {
+    $('.js-example-basic-multiple').select2();
+});
+    </script>
+</body>
+
+</html>
